@@ -7,10 +7,10 @@ const Slice = createSlice({
   initialState,
   reducers: {
     changeChartData(state, action: PayloadAction<WidgetData[]>) {
-      state.chartDataList = action.payload;
+      state.widgetDataList = action.payload;
     },
     addChartData(state, action: PayloadAction<WidgetData>) {
-      state.chartDataList = [...state.chartDataList, action.payload];
+      state.widgetDataList = [...state.widgetDataList, action.payload];
     },
   },
 });

@@ -3,6 +3,8 @@ import * as React from 'react';
 import {Button} from '@blueprintjs/core';
 import WidgetData from '../../core/types/WidgetData';
 import Widget from './Widget';
+import {Bar, Line, Doughnut, HorizontalBar, Radar} from 'react-chartjs-2';
+import WidgetGrid from './WidgetGrid';
 
 interface Props {
   widgetDataList: WidgetData[];
@@ -19,11 +21,7 @@ export default function (props: Props) {
         onClick={() => {}}>
         <div>Add Widget</div>
       </Button>
-      <div style={styles.container}>
-        {props.widgetDataList.map((widgetData: WidgetData) => (
-          <Widget data={widgetData} />
-        ))}
-      </div>
+      <WidgetGrid widgetDataList={props.widgetDataList} />
     </div>
   );
 }

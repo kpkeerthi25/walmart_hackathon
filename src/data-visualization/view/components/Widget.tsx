@@ -2,15 +2,61 @@ import React from 'react';
 // @ts-ignore
 import {Button, Card, Divider} from '@blueprintjs/core';
 import WidgetData from '../../core/types/WidgetData';
-
+import {
+  BarChart,
+  RadarChart,
+  PieChart,
+  LineChart,
+  HorizontalBarChart,
+  DoughnutChart,
+} from './Charts';
 interface Props {
   data: WidgetData;
+  height: number;
+  width: number;
 }
 
 export default function (props: Props) {
-  return (
-    <Card style={styles.container} interactive={true} onClick={() => {}} />
-  );
+  if (props.data.type === 'Bar') {
+    return (
+      <BarChart data={props.data} width={props.width} height={props.height} />
+    );
+  }
+  if (props.data.type === 'Line') {
+    return (
+      <LineChart data={props.data} width={props.width} height={props.height} />
+    );
+  }
+  if (props.data.type === 'Pie') {
+    return (
+      <PieChart data={props.data} width={props.width} height={props.height} />
+    );
+  }
+  if (props.data.type === 'HorizontalBar') {
+    return (
+      <HorizontalBarChart
+        data={props.data}
+        width={props.width}
+        height={props.height}
+      />
+    );
+  }
+  if (props.data.type === 'Radar') {
+    return (
+      <RadarChart data={props.data} width={props.width} height={props.height} />
+    );
+  }
+  if (props.data.type === 'Doughnut') {
+    return (
+      <DoughnutChart
+        data={props.data}
+        width={props.width}
+        height={props.height}
+      />
+    );
+  }
+
+  return <div />;
 }
 
 const styles = {
