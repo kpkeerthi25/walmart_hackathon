@@ -1,7 +1,6 @@
-
-
 class DataVisualizationService {
   async fetchSomeData(): Promise<Array<any>> {
+    return [];
   }
 }
 

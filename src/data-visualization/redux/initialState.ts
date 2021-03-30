@@ -1,5 +1,5 @@
-import WidgetData from "../core/types/ChartData";
-import LayoutData from "../core/types/LayoutData";
+import WidgetData from '../core/types/WidgetData';
+import LayoutData from '../core/types/LayoutData';
 
 interface InitialState {
   chartDataList: WidgetData[];
@@ -10,7 +10,7 @@ interface InitialState {
 const initialState: InitialState = {
   chartDataList: [],
   layoutList: [],
-  currentChartIndex: 0
+  currentChartIndex: 0,
 };
 
 export default initialState;

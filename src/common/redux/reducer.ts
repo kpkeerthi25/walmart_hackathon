@@ -1,5 +1,5 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import VisualizationReducer from "../../data-visualization/redux";
+import {combineReducers} from '@reduxjs/toolkit';
+import VisualizationReducer from '../../data-visualization/redux';
 
 const rootReducer = combineReducers({
   visualization: VisualizationReducer,

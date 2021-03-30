@@ -1,4 +1,3 @@
-
 interface LayoutData {
   x: number;
   y: number;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import WidgetListContainer from '../containers/WidgetListContainer';
 import WidgetFormContainer from '../containers/WidgetFormContainer';
 

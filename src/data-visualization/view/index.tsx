@@ -1,3 +1,3 @@
-import Screen from "./components";
+import Screen from './components';
 
 export default Screen;

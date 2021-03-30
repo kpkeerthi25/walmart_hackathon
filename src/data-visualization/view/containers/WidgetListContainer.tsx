@@ -1,13 +1,12 @@
-import { AppDispatch } from "../../../common/redux/store";
-import { RootState } from "../../../common/redux/reducer";
-import { connect } from "react-redux";
+import {AppDispatch} from '../../../common/redux/store';
+import {RootState} from '../../../common/redux/reducer';
+import {connect} from 'react-redux';
 import WidgetList from '../components/WidgetList';
 
 const mapStateToProps = (state: RootState) => ({
+  widgetDataList: [],
 });
 
-const mapDispatchToProps = (dispatch: AppDispatch) => ({
-
-});
+const mapDispatchToProps = (dispatch: AppDispatch) => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(WidgetList);
