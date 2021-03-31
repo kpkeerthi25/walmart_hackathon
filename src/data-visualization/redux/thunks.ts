@@ -10,5 +10,6 @@ export const dataVisualizationEntered = (): AppThunk => async (
 ) => {
   console.log('FETCH');
   const data: DataVisualizationState = await DataVisualizationService.fetch();
+
   dispatch(changeState(data));
 };

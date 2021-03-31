@@ -1,5 +1,5 @@
 class DataVisualizationService {
-  static API = 'http://192.168.1.8:7000';
+  static API = 'http://localhost:5000/api';
 
   static async fetch(): Promise<any> {
     const userId: number = 1;

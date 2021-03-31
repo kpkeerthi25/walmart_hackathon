@@ -6,7 +6,16 @@ const Slice = createSlice({
   initialState,
   reducers: {
     changeState(state, action: PayloadAction<DataVisualizationState>) {
-      state = action.payload;
+      state.categoryDataList = action.payload.categoryDataList;
+      state.totalSaved = action.payload.totalSaved;
+      state.totalProducts = action.payload.totalProducts;
+      state.importData = action.payload.importData;
+      state.monthList = action.payload.monthList;
+      state.title = action.payload.title;
+      state.mostProfitableProductList =
+        action.payload.mostProfitableProductList;
+      state.costliestProductList = action.payload.costliestProductList;
+      state.longestInCartList = action.payload.costliestProductList;
     },
   },
 });
