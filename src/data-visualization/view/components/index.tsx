@@ -1,6 +1,10 @@
 import * as React from 'react';
-import BrandLoyalty from './Widgets/BrandLoyalty';
-import {DataVisualizationState} from '../../redux/initialState';
+import {
+  CategoryData,
+  MonthlyPurchaseData,
+  Product,
+  ImportData as ImportDataType,
+} from '../../redux/initialState';
 import PurchaseCategory from './Widgets/PurchaseCategory';
 import Saved from './Widgets/Saved';
 import TotalPurchases from './Widgets/TotalPurchases';
@@ -10,10 +14,30 @@ import LongestCart from './Widgets/LongestCart';
 import ImportData from './Widgets/ImportData';
 import Title from './Widgets/Title';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
-import {Card} from '@blueprintjs/core';
 import {Container, Row, Col} from 'react-bootstrap';
+import CostliestProducts from './Widgets/CostliestProducts';
+import {useEffect} from 'react';
 
-export default function (props: DataVisualizationState) {
+interface Props {
+  categoryDataList: CategoryData[];
+  totalSaved: number;
+  mostProfitableProductList: Product[];
+  costliestProductList: Product[];
+  totalProducts: number;
+  longestInCartList: Product[];
+  importData: ImportDataType;
+  monthList: MonthlyPurchaseData;
+  title: string;
+  fetchData: () => void;
+}
+
+export default function (props: Props) {
+  useEffect(() => {
+    if (props.totalSaved < 0) {
+      props.fetchData();
+    }
+  }, [props.totalSaved]);
+
   return (
     <Container
       fluid
@@ -21,7 +45,7 @@ export default function (props: DataVisualizationState) {
       className={DARK}>
       <Row style={{width: 'inherit', marginBottom: 20}}>
         <Col lg={4} md={6} sm={12}>
-          <PurchaseCategory categoryData={props.categoryData} />
+          <PurchaseCategory categoryDataList={props.categoryDataList} />
         </Col>
         <Col lg={4} md={6} sm={12}>
           <MonthlyData monthList={props.monthList} />
@@ -51,11 +75,11 @@ export default function (props: DataVisualizationState) {
           <LongestCart longestInCartList={props.longestInCartList} />
         </Col>
         <Col lg={4} md={6} sm={12}>
-          {' '}
-          <BrandLoyalty brandList={props.brandList} />
+          <CostliestProducts
+            costliestProductList={props.costliestProductList}
+          />
         </Col>
         <Col lg={4} md={6} sm={12}>
-          {' '}
           <ProfitableProducts
             mostProfitableProductList={props.mostProfitableProductList}
           />

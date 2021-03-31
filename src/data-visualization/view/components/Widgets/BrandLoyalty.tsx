@@ -1,12 +1,10 @@
 import React from 'react';
 // @ts-ignore
-import {Button, Card, Divider} from '@blueprintjs/core';
-import {Brand} from '../../../redux/initialState';
 import styles from './styles';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
 
 interface Props {
-  brandList: Brand[];
+  brandList: string[];
 }
 
 export default function (props: Props) {

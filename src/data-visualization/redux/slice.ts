@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import initialState, {Brand, DataVisualizationState} from './initialState';
+import initialState, {DataVisualizationState} from './initialState';
 
 const Slice = createSlice({
   name: 'Interview',

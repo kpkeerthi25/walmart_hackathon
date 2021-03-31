@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // @ts-ignore
 import {Button, ButtonGroup, Card, Divider, Text} from '@blueprintjs/core';
-import {Brand, ImportData} from '../../../redux/initialState';
+import {ImportData} from '../../../redux/initialState';
 import styles from './styles';
 import {ChartData, createChartData} from '../../../core/types/ChartData';
 import {

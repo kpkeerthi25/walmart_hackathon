@@ -6,6 +6,7 @@ interface Props {
     type: 'Pie' | 'Doughnut' | 'Line' | 'Bar' | 'HorizontalBar',
   ) => void;
   setFull: (value: boolean) => void;
+  setDataType: (type: string) => void;
 }
 
 export default function (props: Props) {
@@ -18,9 +19,24 @@ export default function (props: Props) {
           marginRight: 10,
         }}>
         <ButtonGroup minimal={true}>
-          <Button>Items</Button>
-          <Button>Spent</Button>
-          <Button>Saved</Button>
+          <Button
+            onClick={() => {
+              props.setDataType('items');
+            }}>
+            Items
+          </Button>
+          <Button
+            onClick={() => {
+              props.setDataType('cost');
+            }}>
+            Spent
+          </Button>
+          <Button
+            onClick={() => {
+              props.setDataType('discount');
+            }}>
+            Saved
+          </Button>
         </ButtonGroup>
       </div>
       <div style={{display: 'flex', flexDirection: 'row'}}>

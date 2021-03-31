@@ -1,9 +1,5 @@
 import React from 'react';
-// @ts-ignore
-import {Button, Card, Divider, Text} from '@blueprintjs/core';
-import {Brand} from '../../../redux/initialState';
 import styles from './styles';
-import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
 
 interface Props {
   totalProducts: number;

@@ -4,15 +4,15 @@ import styles from './styles';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
 
 interface Props {
-  mostProfitableProductList: Product[];
+  costliestProductList: Product[];
 }
 
 export default function (props: Props) {
   return (
     <div style={{...styles.container}} className={DARK}>
-      <div style={styles.caption}>Profitable Purchases</div>
+      <div style={styles.caption}>Costliest Purchases</div>
       <table>
-        {props.mostProfitableProductList.map((product: Product) => (
+        {props.costliestProductList.map((product: Product) => (
           <tr>
             <td>
               <img src={product.image} style={styles.image} />

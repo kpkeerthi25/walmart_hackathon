@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 // @ts-ignore
-import {Card} from '@blueprintjs/core';
 import {
   PieChart,
   DoughnutChart,
@@ -9,10 +8,7 @@ import {
   HorizontalBarChart,
 } from '../Charts';
 import ComparisonChartControls from '../Widget/ComparisonChartControls';
-import {
-  CategoryDataWrapper,
-  MonthlyPurchaseData,
-} from '../../../redux/initialState';
+import {MonthlyPurchaseData} from '../../../redux/initialState';
 import {ChartData, createChartData} from '../../../core/types/ChartData';
 import styles from './styles';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
@@ -57,7 +53,11 @@ export default function (props: Props) {
   return (
     <div style={styles.container} className={DARK}>
       <div style={styles.caption}>Monthly Break-up</div>
-      <ComparisonChartControls setType={setType} setFull={setFull} />
+      <ComparisonChartControls
+        setDataType={setDataType}
+        setType={setType}
+        setFull={setFull}
+      />
       {type === 'Bar' ? (
         <BarChart data={chartData} />
       ) : type === 'Pie' ? (

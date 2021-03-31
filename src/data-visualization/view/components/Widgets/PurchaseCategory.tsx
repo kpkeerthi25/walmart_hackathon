@@ -9,12 +9,12 @@ import {
   HorizontalBarChart,
 } from '../Charts';
 import ComparisonChartControls from '../Widget/ComparisonChartControls';
-import {CategoryDataWrapper} from '../../../redux/initialState';
 import {ChartData, createChartData} from '../../../core/types/ChartData';
 import styles from './styles';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
+import {CategoryData} from '../../../redux/initialState';
 interface Props {
-  categoryData: CategoryDataWrapper;
+  categoryDataList: CategoryData[];
 }
 
 export default function (props: Props) {
@@ -24,8 +24,12 @@ export default function (props: Props) {
   const [chartData, setChartData] = useState<ChartData>(
     createChartData(
       'Pie',
-      props.categoryData.cost.data,
-      props.categoryData.cost.labels,
+      props.categoryDataList.map(
+        (categoryData: CategoryData) => categoryData.cost,
+      ),
+      props.categoryDataList.map(
+        (categoryData: CategoryData) => categoryData.label,
+      ),
     ),
   );
 
@@ -34,19 +38,31 @@ export default function (props: Props) {
       dataType === 'items'
         ? createChartData(
             'Pie',
-            props.categoryData.items.data,
-            props.categoryData.items.labels,
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.items,
+            ),
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.label,
+            ),
           )
         : dataType === 'cost'
         ? createChartData(
             'Pie',
-            props.categoryData.cost.data,
-            props.categoryData.cost.labels,
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.cost,
+            ),
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.label,
+            ),
           )
         : createChartData(
             'Pie',
-            props.categoryData.discount.data,
-            props.categoryData.discount.labels,
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.discount,
+            ),
+            props.categoryDataList.map(
+              (categoryData: CategoryData) => categoryData.label,
+            ),
           ),
     );
   }, [dataType]);
@@ -54,7 +70,11 @@ export default function (props: Props) {
   return (
     <div style={styles.container} className={DARK}>
       <div style={styles.caption}>Category Break-up</div>
-      <ComparisonChartControls setType={setType} setFull={setFull} />
+      <ComparisonChartControls
+        setDataType={setDataType}
+        setType={setType}
+        setFull={setFull}
+      />
       {type === 'Bar' ? (
         <BarChart data={chartData} />
       ) : type === 'Pie' ? (
