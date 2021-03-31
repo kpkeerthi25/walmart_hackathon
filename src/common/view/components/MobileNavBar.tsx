@@ -8,11 +8,22 @@ interface Props {
 
 export default function (props: Props) {
   return (
-    <Navbar fixedToTop={false} className={'bp3-dark ' + props.className}>
-      <Navbar.Group align={Alignment.LEFT}>
-        <Navbar.Heading>Madras Institute of Technology</Navbar.Heading>
-        <Navbar.Divider />
-        <Button
+    <Navbar
+      fixedToTop={false}
+      className={'bp3-dark ' + props.className}
+      style={{display: 'flex', flex: 1, backgroundColor: '#737373'}}>
+      <div
+        className="container-fluid-nav text-center"
+        style={{
+          flex: 1,
+          alignSelf: 'center',
+          fontWeight: 'bold',
+          fontSize: 30,
+        }}>
+        WalMart Hackathon
+      </div>
+
+      {/* <Button
           minimal={true}
           outlined={true}
           icon={'people'}
@@ -35,8 +46,7 @@ export default function (props: Props) {
           outlined={true}
           style={{marginRight: 10}}
           icon={'drawer-left'}
-        />
-      </Navbar.Group>
+        /> */}
     </Navbar>
   );
 }

@@ -1,25 +1,28 @@
 const styles = {
   container: {
-    width: 570,
-    minHeight: 300,
-    padding: 20,
+    flex: 1,
+    // width: 570,
+    // minHeight: 300,
+    // padding: 20,
     backgroundColor: 'black',
-    // minHeight: 200,
-    marginTop: 30,
-    marginRight: 30,
+    minHeight: 300,
+    marginTop: 40,
+    // marginRight: 30,
     alignItems: 'center',
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column' as 'column',
   },
+
   value: {
-    fontSize: 60,
+    fontSize: 80,
     fontFamily: "'Kanit', sans-serif",
     paddingBottom: 5,
   },
   caption: {
     marginTop: 15,
-    fontSize: 30,
+    fontSize: 50,
+    color: '#ff471a',
     fontFamily: "'Teko', sans-serif",
   },
   logo: {
