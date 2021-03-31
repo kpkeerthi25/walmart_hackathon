@@ -1,6 +1,6 @@
 import React, {CSSProperties, useState} from 'react';
 import './App.css';
-import DataVisualization from './data-visualization';
+import DataVisualization from './data-visualization/view/containers';
 import {Provider} from 'react-redux';
 import store from './common/redux/store';
 import '@blueprintjs/core/lib/css/blueprint.css';

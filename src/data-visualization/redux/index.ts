@@ -1,4 +1,3 @@
-import Reducer, {changeChartData, addChartData} from './slice';
+import Reducer from './slice';
 
 export default Reducer;
-export {changeChartData, addChartData};

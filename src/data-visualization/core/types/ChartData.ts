@@ -42,7 +42,7 @@ export function createChartData(
           borderWidth: 1,
           hoverBackgroundColor: computeHoverColor(randomColor),
           hoverBorderColor: computeHoverBorderColor(randomColor),
-          data: [65, 59, 80, 81, 56, 155, 40],
+          data: data,
         },
       ],
       labels: labelList,
@@ -64,7 +64,7 @@ export function createChartData(
           hoverBorderColor: randomColorList.map((randomColor: string) =>
             computeHoverBorderColor(randomColor),
           ),
-          data: [65, 59, 80, 81, 56, 155, 40],
+          data: data,
         },
       ],
       labels: labelList,

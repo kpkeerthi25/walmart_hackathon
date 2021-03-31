@@ -1,20 +1,16 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import initialState from './initialState';
-import WidgetData from '../core/types/WidgetData';
+import initialState, {Brand, DataVisualizationState} from './initialState';
 
 const Slice = createSlice({
   name: 'Interview',
   initialState,
   reducers: {
-    changeChartData(state, action: PayloadAction<WidgetData[]>) {
-      state.widgetDataList = action.payload;
-    },
-    addChartData(state, action: PayloadAction<WidgetData>) {
-      state.widgetDataList = [...state.widgetDataList, action.payload];
+    changeState(state, action: PayloadAction<DataVisualizationState>) {
+      state = action.payload;
     },
   },
 });
 
 export default Slice.reducer;
 
-export const {changeChartData, addChartData} = Slice.actions;
+export const {changeState} = Slice.actions;

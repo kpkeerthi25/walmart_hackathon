@@ -1,22 +1,20 @@
 import React from 'react';
-import WidgetData from '../../../core/types/WidgetData';
-import {Bar, HorizontalBar} from 'react-chartjs-2';
+import {HorizontalBar} from 'react-chartjs-2';
+import {ChartData} from '../../../core/types/ChartData';
 
 interface Props {
-  data: WidgetData;
-  height: number;
-  width: number;
+  data: ChartData;
 }
 
 export default function (props: Props) {
   return (
     <HorizontalBar
       data={{
-        ...props.data.data,
+        ...props.data,
         datasets: [
           {
-            ...props.data.data.datasets[0],
-            data: [...props.data.data.datasets[0].data],
+            ...props.data.datasets[0],
+            data: [...props.data.datasets[0].data],
           },
         ],
       }}
