@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kanit:ital,wght@1,300&family=Teko:wght@500&display=swap');
 .desktop {
-  display:block;
+  display: block;
 }
 .mobile {
-  display:none;
+  display: none;
 }
 @media screen and (max-width: 600px) {
   .desktop {
-    display:none;
+    display: none;
   }
   .mobile {
-    display:block;
+    display: block;
   }
 }
 body {
   background-color: black;
 }
-

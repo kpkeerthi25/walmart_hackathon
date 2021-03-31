@@ -11,35 +11,68 @@ import ImportData from './Widgets/ImportData';
 import Title from './Widgets/Title';
 import {DARK} from '@blueprintjs/core/lib/cjs/common/classes';
 import {Card} from '@blueprintjs/core';
+import {Container, Row, Col} from 'react-bootstrap';
 
 export default function (props: DataVisualizationState) {
   return (
-    <div style={styles.container} className={DARK}>
-      <PurchaseCategory categoryData={props.categoryData} />
-      <MonthlyData monthList={props.monthList} />
-      <ImportData importData={props.importData} />
-      <TotalPurchases
-        totalSaved={props.totalSaved}
-        totalProducts={props.totalProducts}
-        title={props.title}
-      />
-      <Saved totalSaved={props.totalSaved} />
-      <Title title={props.title} />
-      <LongestCart longestInCartList={props.longestInCartList} />
-      <BrandLoyalty brandList={props.brandList} />
-      <ProfitableProducts
-        mostProfitableProductList={props.mostProfitableProductList}
-      />
-    </div>
+    <Container
+      fluid
+      style={{...styles.container, background: 'black'}}
+      className={DARK}>
+      <Row style={{width: 'inherit', marginBottom: 20}}>
+        <Col lg={4} md={6} sm={12}>
+          <PurchaseCategory categoryData={props.categoryData} />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          <MonthlyData monthList={props.monthList} />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          <ImportData importData={props.importData} />
+        </Col>
+        {/* </Row>
+      <Row style={{width: 'inherit', marginBottom: 30}}> */}
+        <Col lg={4} md={6} sm={12}>
+          <TotalPurchases
+            totalSaved={props.totalSaved}
+            totalProducts={props.totalProducts}
+            title={props.title}
+          />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          <Saved totalSaved={props.totalSaved} />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          {' '}
+          <Title title={props.title} />
+        </Col>
+        {/* </Row>
+      <Row style={{width: 'inherit'}}> */}
+        <Col lg={4} md={6} sm={12}>
+          <LongestCart longestInCartList={props.longestInCartList} />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          {' '}
+          <BrandLoyalty brandList={props.brandList} />
+        </Col>
+        <Col lg={4} md={6} sm={12}>
+          {' '}
+          <ProfitableProducts
+            mostProfitableProductList={props.mostProfitableProductList}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
 const styles: any = {
   container: {
+    margin: 0,
     alignSelf: 'center',
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
     padding: 5,
+    width: '100%',
   },
 };

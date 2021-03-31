@@ -8,39 +8,33 @@ interface Props {
 
 export default function (props: Props) {
   return (
-    <Navbar fixedToTop={false} className={'bp3-dark ' + props.className}>
+    <Navbar
+      fixedToTop={false}
+      className={'bp3-dark ' + props.className}
+      style={{backgroundColor: '#737373'}}>
       <Navbar.Group align={Alignment.LEFT}>
-        <Navbar.Heading>WalMart Hackathon</Navbar.Heading>
+        <Navbar.Heading style={{fontWeight: 'bold', fontSize: 30}}>
+          WalMart Hackathon
+        </Navbar.Heading>
         <Navbar.Divider />
-        <Button
-          minimal={true}
+        {/* <Button
           outlined={true}
           icon={'chart'}
-          style={{marginRight: 10}}
+          style={{marginRight: 10, background: 'green'}}
           onClick={() => {
             props.setRoute('interview');
           }}>
           Data Visualization
         </Button>
         <Button
-          minimal={true}
           outlined={true}
           icon={'shopping-cart'}
-          style={{marginRight: 10}}
+          style={{marginRight: 10, background: 'green'}}
           onClick={() => {
             props.setRoute('studentChange');
           }}>
           Products
-        </Button>
-      </Navbar.Group>
-      <Navbar.Group align={Alignment.RIGHT}>
-        <Button
-          icon={'drawer-left'}
-          // minimal={false}
-          // outlined={true}
-          style={{marginRight: 10}}>
-          Logout
-        </Button>
+        </Button> */}
       </Navbar.Group>
     </Navbar>
   );
